@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/css/style.css">
+    <title>WikiGroup Wiki</title>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        {% include 'menu.html' %}
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        {% block content %}
+        <!-- Content will be injected here -->
+        {% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        {% include 'footer.html' %}
+    </footer>
+
+    <script src="../public/js/all.js"></script>
+    <script src="../public/js/custom.js"></script>
+</body>
+</html>
