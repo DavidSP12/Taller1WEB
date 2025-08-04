@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WikiGroup - Despliegue</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>WikiGroup</h1>
+        </div>
+        <nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="team.html"><i class="fas fa-users"></i> Equipo</a></li>
+                <li><a href="project.html"><i class="fas fa-project-diagram"></i> Proyecto</a></li>
+                <li><a href="requirements.html"><i class="fas fa-clipboard-list"></i> Requerimientos</a></li>
+                <li><a href="architecture.html"><i class="fas fa-sitemap"></i> Arquitectura</a></li>
+                <li><a href="development.html"><i class="fas fa-code"></i> Desarrollo</a></li>
+                <li><a href="tests.html"><i class="fas fa-vial"></i> Pruebas</a></li>
+                <li><a href="deployment.html" class="active"><i class="fas fa-rocket"></i> Despliegue</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+    <section id="deployment">
+        <h1>Despliegue</h1>
+        <p class="lead">Documentación detallada sobre los procesos de despliegue, configuración de entornos y monitorización del sistema en producción.</p>
+        
+        <div class="project-container">
+            <!-- Entornos de Despliegue -->
+            <div class="project-section">
+                <div class="section-icon">
+                    <i class="fas fa-server"></i>
+                </div>
+                <div class="section-content">
+                    <h2>Entornos de Despliegue</h2>
+                    <p>El sistema se despliega en diferentes entornos según la fase del ciclo de desarrollo:</p>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <h3><i class="fas fa-laptop-code"></i> Desarrollo</h3>
+                            <p>Entorno local para desarrolladores donde se implementan y prueban nuevas funcionalidades. Utiliza una base de datos H2 en memoria para facilitar las pruebas.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3><i class="fas fa-vial"></i> Pruebas</h3>
+                            <p>Entorno de integración continua donde se ejecutan pruebas automatizadas. Utiliza una base de datos MySQL de prueba con datos de ejemplo.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3><i class="fas fa-check-circle"></i> Preproducción</h3>
+                            <p>Entorno idéntico a producción pero aislado, donde se realizan pruebas finales antes del despliegue. Utiliza una réplica de la base de datos de producción.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3><i class="fas fa-globe"></i> Producción</h3>
+                            <p>Entorno final accesible por los usuarios. Utiliza una base de datos MySQL optimizada y con alta disponibilidad.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Proceso de CI/CD -->
+            <div class="project-section">
+                <div class="section-icon">
+                    <i class="fas fa-sync-alt"></i>
+                </div>
+                <div class="section-content">
+                    <h2>Proceso de CI/CD</h2>
+                    <p>Utilizamos un pipeline de integración y despliegue continuo para automatizar el proceso de entrega:</p>
+                    <ul class="objectives-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Integración Continua:</strong> Cada commit a la rama principal desencadena la ejecución de pruebas automatizadas.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Análisis de Código:</strong> SonarQube analiza la calidad del código y detecta posibles vulnerabilidades.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Construcción de Artefactos:</strong> Maven compila el código y genera los artefactos necesarios para el despliegue.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Despliegue Automático:</strong> Jenkins despliega automáticamente en el entorno correspondiente según la rama.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Pruebas Post-Despliegue:</strong> Se ejecutan pruebas de humo para verificar que el despliegue fue exitoso.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Infraestructura -->
+            <div class="project-section">
+                <div class="section-icon">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+                <div class="section-content">
+                    <h2>Infraestructura</h2>
+                    <p>La aplicación se despliega en una infraestructura cloud escalable y resiliente:</p>
+                    <div class="tech-stack">
+                        <div class="tech-item">
+                            <i class="fab fa-aws"></i>
+                            <span>AWS EC2</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-database"></i>
+                            <span>RDS MySQL</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-balance-scale"></i>
+                            <span>Load Balancer</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>WAF</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-hdd"></i>
+                            <span>S3</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-route"></i>
+                            <span>Route 53</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-cloud"></i>
+                            <span>CloudFront</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Configuración -->
+            <div class="project-section">
+                <div class="section-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <div class="section-content">
+                    <h2>Configuración</h2>
+                    <p>La configuración de la aplicación se gestiona de forma externa para facilitar los cambios entre entornos:</p>
+                    <div class="feature-item">
+                        <pre><code># application-prod.properties
+
+# Configuración de la base de datos
+spring.datasource.url=jdbc:mysql://${DB_HOST}:${DB_PORT}/${DB_NAME}
+spring.datasource.username=${DB_USERNAME}
+spring.datasource.password=${DB_PASSWORD}
+
+# Configuración de JPA
+spring.jpa.hibernate.ddl-auto=none
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
+
+# Configuración de seguridad
+security.jwt.secret=${JWT_SECRET}
+security.jwt.expiration=86400000
+
+# Configuración de servidor
+server.port=8080
+server.compression.enabled=true
+
+# Configuración de logging
+logging.level.root=WARN
+logging.level.com.example=INFO
+logging.file.name=/var/log/application.log</code></pre>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Monitorización -->
+            <div class="project-section">
+                <div class="section-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="section-content">
+                    <h2>Monitorización</h2>
+                    <p>Utilizamos diversas herramientas para monitorizar el rendimiento y la disponibilidad del sistema:</p>
+                    <div class="progress-container">
+                        <div class="progress-item">
+                            <div class="progress-label">Disponibilidad</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 99.9%;"></div>
+                            </div>
+                            <div class="progress-percentage">99.9%</div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-label">Tiempo de Respuesta</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 95%;"></div>
+                            </div>
+                            <div class="progress-percentage">95%</div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-label">Uso de CPU</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 65%;"></div>
+                            </div>
+                            <div class="progress-percentage">65%</div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-label">Uso de Memoria</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 70%;"></div>
+                            </div>
+                            <div class="progress-percentage">70%</div>
+                        </div>
+                    </div>
+                    <p>Herramientas de monitorización:</p>
+                    <div class="tech-stack">
+                        <div class="tech-item">
+                            <i class="fas fa-eye"></i>
+                            <span>Prometheus</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Grafana</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-heartbeat"></i>
+                            <span>Healthchecks</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-bell"></i>
+                            <span>Alertmanager</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Enlaces Rápidos</h3>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="team.html">Equipo</a></li>
+                <li><a href="project.html">Proyecto</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Documentación</h3>
+            <ul>
+                <li><a href="requirements.html">Requerimientos</a></li>
+                <li><a href="architecture.html">Arquitectura</a></li>
+                <li><a href="development.html">Desarrollo</a></li>
+                <li><a href="tests.html">Pruebas</a></li>
+                <li><a href="deployment.html">Despliegue</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Síguenos</h3>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2023 WikiGroup. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<script>
+    // Highlight active navigation item
+    document.addEventListener('DOMContentLoaded', function() {
+        const currentLocation = location.href;
+        const menuItems = document.querySelectorAll('.nav-menu a');
+        menuItems.forEach(link => {
+            if(link.href === currentLocation) {
+                link.classList.add('active');
+            }
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        menuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+    });
+</script>
+ </body>
+ </html>
