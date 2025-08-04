@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WikiGroup - Pruebas</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>WikiGroup</h1>
+        </div>
+        <nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="team.html"><i class="fas fa-users"></i> Equipo</a></li>
+                <li><a href="project.html"><i class="fas fa-project-diagram"></i> Proyecto</a></li>
+                <li><a href="requirements.html"><i class="fas fa-clipboard-list"></i> Requerimientos</a></li>
+                <li><a href="architecture.html"><i class="fas fa-sitemap"></i> Arquitectura</a></li>
+                <li><a href="development.html"><i class="fas fa-code"></i> Desarrollo</a></li>
+                <li><a href="tests.html" class="active"><i class="fas fa-vial"></i> Pruebas</a></li>
+                <li><a href="deployment.html"><i class="fas fa-rocket"></i> Despliegue</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+    <section id="tests">
+        <h1>Pruebas</h1>
+        <p class="lead">Documentación detallada sobre las estrategias de pruebas implementadas, incluyendo pruebas unitarias, de integración, y de aceptación.</p>
+        
+        <div class="project-container">
+            <!-- Estrategia de Pruebas -->
+            <div class="project-section">
+                <div class="section-icon">
+                    <i class="fas fa-clipboard-check"></i>
+                </div>
+                <div class="section-content">
+                    <h2>Estrategia de Pruebas</h2>
+                    <p>Nuestra estrategia de pruebas se basa en la pirámide de pruebas, con un enfoque en pruebas automatizadas a todos los niveles:</p>
+                    <div class="progress-container">
+                        <div class="progress-item">
+                            <div class="progress-label">Pruebas Unitarias</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 90%;"></div>
+                            </div>
+                            <div class="progress-percentage">90%</div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-label">Pruebas de Integración</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%;"></div>
+                            </div>
+                            <div class="progress-percentage">75%</div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-label">Pruebas E2E</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 60%;"></div>
+                            </div>
+                            <div class="progress-percentage">60%</div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-label">Pruebas Manuales</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 40%;"></div>
+                            </div>
+                            <div class="progress-percentage">40%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pruebas Frontend -->
+            <div class="project-section">
+                <div class="section-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <div class="section-content">
+                    <h2>Pruebas Frontend</h2>
+                    <p>Las pruebas del frontend se centran en verificar la correcta renderización de componentes, la interacción del usuario y la integración con el backend.</p>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <h3><i class="fas fa-vial"></i> Pruebas Unitarias</h3>
+                            <p>Utilizamos Jest para probar componentes individuales y funciones utilitarias, asegurando que cada unidad funcione correctamente de forma aislada.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3><i class="fas fa-window-restore"></i> Pruebas de Componentes</h3>
+                            <p>Verificamos que los componentes se rendericen correctamente con diferentes props y estados, y que respondan adecuadamente a las interacciones del usuario.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3><i class="fas fa-route"></i> Pruebas de Navegación</h3>
+                            <p>Comprobamos que las rutas y la navegación entre páginas funcionen correctamente, manteniendo el estado de la aplicación según lo esperado.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pruebas Backend -->
+            <div class="project-section">
+                <div class="section-icon">
+                    <i class="fas fa-server"></i>
+                </div>
+                <div class="section-content">
+                    <h2>Pruebas Backend</h2>
+                    <p>Las pruebas del backend verifican la lógica de negocio, el acceso a datos y la exposición correcta de APIs.</p>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <h3><i class="fas fa-cube"></i> Pruebas Unitarias</h3>
+                            <p>Utilizamos JUnit y Mockito para probar servicios y componentes individuales, aislando las dependencias mediante mocks.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3><i class="fas fa-database"></i> Pruebas de Repositorio</h3>
+                            <p>Verificamos que las operaciones de acceso a datos funcionen correctamente, utilizando bases de datos en memoria para pruebas.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3><i class="fas fa-exchange-alt"></i> Pruebas de API</h3>
+                            <p>Comprobamos que los endpoints REST respondan correctamente a diferentes solicitudes y devuelvan los códigos de estado y datos esperados.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pruebas de Integración -->
+            <div class="project-section">
+                <div class="section-icon">
+                    <i class="fas fa-plug"></i>
+                </div>
+                <div class="section-content">
+                    <h2>Pruebas de Integración</h2>
+                    <p>Las pruebas de integración verifican que los diferentes componentes del sistema funcionen correctamente juntos.</p>
+                    <ul class="objectives-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>API a Base de Datos:</strong> Verificamos que los controladores interactúen correctamente con los servicios y repositorios.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Frontend a Backend:</strong> Comprobamos que las llamadas desde el frontend a las APIs del backend funcionen según lo esperado.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Servicios Externos:</strong> Verificamos la integración con servicios externos mediante mocks o entornos de prueba.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Flujos Completos:</strong> Probamos flujos de usuario completos que atraviesan múltiples componentes del sistema.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Herramientas de Pruebas -->
+            <div class="project-section">
+                <div class="section-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <div class="section-content">
+                    <h2>Herramientas de Pruebas</h2>
+                    <p>Utilizamos diversas herramientas para automatizar y facilitar las pruebas:</p>
+                    <div class="tech-stack">
+                        <div class="tech-item">
+                            <i class="fas fa-vial"></i>
+                            <span>JUnit</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-user-secret"></i>
+                            <span>Mockito</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-js-square"></i>
+                            <span>Jest</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-robot"></i>
+                            <span>Selenium</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>JMeter</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>SonarQube</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-code-branch"></i>
+                            <span>Jenkins</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Enlaces Rápidos</h3>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="team.html">Equipo</a></li>
+                <li><a href="project.html">Proyecto</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Documentación</h3>
+            <ul>
+                <li><a href="requirements.html">Requerimientos</a></li>
+                <li><a href="architecture.html">Arquitectura</a></li>
+                <li><a href="development.html">Desarrollo</a></li>
+                <li><a href="tests.html">Pruebas</a></li>
+                <li><a href="deployment.html">Despliegue</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Síguenos</h3>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2023 WikiGroup. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<script>
+    // Highlight active navigation item
+    document.addEventListener('DOMContentLoaded', function() {
+        const currentLocation = location.href;
+        const menuItems = document.querySelectorAll('.nav-menu a');
+        menuItems.forEach(link => {
+            if(link.href === currentLocation) {
+                link.classList.add('active');
+            }
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        menuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+    });
+</script>
+ </body>
+ </html>

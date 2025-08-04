@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WikiGroup - Requerimientos</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>WikiGroup</h1>
+        </div>
+        <nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a href="team.html"><i class="fas fa-users"></i> Equipo</a></li>
+                <li><a href="project.html"><i class="fas fa-project-diagram"></i> Proyecto</a></li>
+                <li><a href="requirements.html" class="active"><i class="fas fa-clipboard-list"></i> Requerimientos</a></li>
+                <li><a href="architecture.html"><i class="fas fa-sitemap"></i> Arquitectura</a></li>
+                <li><a href="development.html"><i class="fas fa-code"></i> Desarrollo</a></li>
+                <li><a href="tests.html"><i class="fas fa-vial"></i> Pruebas</a></li>
+                <li><a href="deployment.html"><i class="fas fa-rocket"></i> Despliegue</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+    <section id="requirements">
+        <h1>Requerimientos</h1>
+        <p class="lead">Documentación detallada de los requerimientos funcionales y no funcionales del sistema, incluyendo historias de usuario y criterios de aceptación.</p>
+        
+        <div class="project-container">
+            <!-- Visión General -->
+            <div class="project-section">
+                <div class="section-icon">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <div class="section-content">
+                    <h2>Visión General</h2>
+                    <p>El sistema tiene como objetivo proporcionar una plataforma de gestión de proyectos colaborativa que permita a los equipos organizar tareas, compartir documentos y hacer seguimiento del progreso de manera eficiente.</p>
+                    <div class="progress-container">
+                        <div class="progress-item">
+                            <div class="progress-label">Requerimientos Completados</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%;"></div>
+                            </div>
+                            <div class="progress-percentage">85%</div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-label">Historias de Usuario</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 90%;"></div>
+                            </div>
+                            <div class="progress-percentage">90%</div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-label">Criterios de Aceptación</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 80%;"></div>
+                            </div>
+                            <div class="progress-percentage">80%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Requerimientos Funcionales -->
+            <div class="project-section">
+                <div class="section-icon">
+                    <i class="fas fa-tasks"></i>
+                </div>
+                <div class="section-content">
+                    <h2>Requerimientos Funcionales</h2>
+                    <p>Los requerimientos funcionales describen las capacidades y funciones que el sistema debe proporcionar:</p>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <h3><i class="fas fa-user"></i> Gestión de Usuarios</h3>
+                            <p>RF-01: El sistema debe permitir el registro de nuevos usuarios.</p>
+                            <p>RF-02: El sistema debe permitir la autenticación de usuarios mediante email y contraseña.</p>
+                            <p>RF-03: El sistema debe permitir la recuperación de contraseñas olvidadas.</p>
+                            <p>RF-04: El sistema debe permitir a los usuarios editar su perfil personal.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3><i class="fas fa-project-diagram"></i> Gestión de Proyectos</h3>
+                            <p>RF-05: El sistema debe permitir la creación de nuevos proyectos.</p>
+                            <p>RF-06: El sistema debe permitir asignar usuarios a proyectos con diferentes roles.</p>
+                            <p>RF-07: El sistema debe permitir editar la información de los proyectos.</p>
+                            <p>RF-08: El sistema debe permitir archivar proyectos completados.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3><i class="fas fa-clipboard-list"></i> Gestión de Tareas</h3>
+                            <p>RF-09: El sistema debe permitir crear tareas dentro de un proyecto.</p>
+                            <p>RF-10: El sistema debe permitir asignar tareas a usuarios específicos.</p>
+                            <p>RF-11: El sistema debe permitir establecer fechas límite para las tareas.</p>
+                            <p>RF-12: El sistema debe permitir cambiar el estado de las tareas (pendiente, en progreso, completada).</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3><i class="fas fa-chart-line"></i> Reportes y Estadísticas</h3>
+                            <p>RF-13: El sistema debe generar reportes de progreso de los proyectos.</p>
+                            <p>RF-14: El sistema debe mostrar estadísticas de rendimiento del equipo.</p>
+                            <p>RF-15: El sistema debe permitir exportar reportes en diferentes formatos (PDF, Excel).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Requerimientos No Funcionales -->
+            <div class="project-section">
+                <div class="section-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="section-content">
+                    <h2>Requerimientos No Funcionales</h2>
+                    <p>Los requerimientos no funcionales describen las características de calidad y restricciones del sistema:</p>
+                    <ul class="objectives-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>RNF-01 Rendimiento:</strong> El sistema debe responder a las solicitudes del usuario en menos de 2 segundos en condiciones normales.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>RNF-02 Escalabilidad:</strong> El sistema debe ser capaz de soportar al menos 1000 usuarios concurrentes sin degradación del rendimiento.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>RNF-03 Disponibilidad:</strong> El sistema debe estar disponible al menos el 99.5% del tiempo, con un tiempo de inactividad planificado no superior a 8 horas al mes.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>RNF-04 Seguridad:</strong> El sistema debe cifrar todas las contraseñas y datos sensibles utilizando algoritmos de cifrado estándar de la industria.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>RNF-05 Usabilidad:</strong> La interfaz de usuario debe ser intuitiva y permitir a los nuevos usuarios completar tareas básicas sin formación previa.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>RNF-06 Compatibilidad:</strong> El sistema debe ser compatible con los navegadores web modernos (Chrome, Firefox, Safari, Edge) en sus versiones lanzadas en los últimos 2 años.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>RNF-07 Mantenibilidad:</strong> El código fuente debe seguir estándares de codificación y estar documentado para facilitar su mantenimiento.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Historias de Usuario -->
+            <div class="project-section">
+                <div class="section-icon">
+                    <i class="fas fa-user-edit"></i>
+                </div>
+                <div class="section-content">
+                    <h2>Historias de Usuario</h2>
+                    <p>Las historias de usuario describen las funcionalidades desde la perspectiva del usuario final:</p>
+                    <div class="feature-item">
+                        <h3>Historia de Usuario: Creación de Proyecto</h3>
+                        <p><strong>Como</strong> gerente de proyecto</p>
+                        <p><strong>Quiero</strong> crear un nuevo proyecto en el sistema</p>
+                        <p><strong>Para</strong> organizar y gestionar las tareas del equipo</p>
+                        <p><strong>Criterios de Aceptación:</strong></p>
+                        <ul>
+                            <li>Puedo acceder a un formulario para crear un nuevo proyecto</li>
+                            <li>Puedo especificar el nombre, descripción y fecha de inicio/fin del proyecto</li>
+                            <li>Puedo asignar miembros del equipo al proyecto con diferentes roles</li>
+                            <li>Recibo una confirmación cuando el proyecto se crea correctamente</li>
+                            <li>El nuevo proyecto aparece en mi lista de proyectos</li>
+                        </ul>
+                    </div>
+                    <div class="feature-item">
+                        <h3>Historia de Usuario: Asignación de Tareas</h3>
+                        <p><strong>Como</strong> líder de equipo</p>
+                        <p><strong>Quiero</strong> asignar tareas a los miembros del equipo</p>
+                        <p><strong>Para</strong> distribuir el trabajo y hacer seguimiento del progreso</p>
+                        <p><strong>Criterios de Aceptación:</strong></p>
+                        <ul>
+                            <li>Puedo crear una nueva tarea dentro de un proyecto existente</li>
+                            <li>Puedo especificar título, descripción, prioridad y fecha límite de la tarea</li>
+                            <li>Puedo asignar la tarea a uno o más miembros del equipo</li>
+                            <li>Los miembros asignados reciben una notificación sobre la nueva tarea</li>
+                            <li>Puedo ver el estado de todas las tareas asignadas en un panel de control</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Enlaces Rápidos</h3>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="team.html">Equipo</a></li>
+                <li><a href="project.html">Proyecto</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Documentación</h3>
+            <ul>
+                <li><a href="requirements.html">Requerimientos</a></li>
+                <li><a href="architecture.html">Arquitectura</a></li>
+                <li><a href="development.html">Desarrollo</a></li>
+                <li><a href="tests.html">Pruebas</a></li>
+                <li><a href="deployment.html">Despliegue</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Síguenos</h3>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2023 WikiGroup. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<script>
+    // Highlight active navigation item
+    document.addEventListener('DOMContentLoaded', function() {
+        const currentLocation = location.href;
+        const menuItems = document.querySelectorAll('.nav-menu a');
+        menuItems.forEach(link => {
+            if(link.href === currentLocation) {
+                link.classList.add('active');
+            }
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        menuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+    });
+</script>
+</body>
+</html>

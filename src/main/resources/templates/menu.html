@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <nav class="navbar" th:fragment="nav">
+        <ul class="nav-list">
+            <li><a th:href="@{/}" th:class="${#httpServletRequest.requestURI == '/' ? 'active' : ''}"><i class="fas fa-home"></i> Inicio</a></li>
+            <li><a th:href="@{/team}" th:class="${#httpServletRequest.requestURI == '/team' ? 'active' : ''}"><i class="fas fa-users"></i> Equipo</a></li>
+            <li><a th:href="@{/project}" th:class="${#httpServletRequest.requestURI == '/project' ? 'active' : ''}"><i class="fas fa-project-diagram"></i> Proyecto</a></li>
+            <li><a th:href="@{/requirements}" th:class="${#httpServletRequest.requestURI == '/requirements' ? 'active' : ''}"><i class="fas fa-list-check"></i> Requerimientos</a></li>
+            <li><a th:href="@{/architecture}" th:class="${#httpServletRequest.requestURI == '/architecture' ? 'active' : ''}"><i class="fas fa-sitemap"></i> Arquitectura</a></li>
+            <li><a th:href="@{/development}" th:class="${#httpServletRequest.requestURI == '/development' ? 'active' : ''}"><i class="fas fa-code"></i> Desarrollo</a></li>
+            <li><a th:href="@{/tests}" th:class="${#httpServletRequest.requestURI == '/tests' ? 'active' : ''}"><i class="fas fa-vial"></i> Pruebas</a></li>
+            <li><a th:href="@{/deployment}" th:class="${#httpServletRequest.requestURI == '/deployment' ? 'active' : ''}"><i class="fas fa-rocket"></i> Despliegue</a></li>
+            <li><a th:href="@{/contact}" th:class="${#httpServletRequest.requestURI == '/contact' ? 'active' : ''}"><i class="fas fa-envelope"></i> Contacto</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
