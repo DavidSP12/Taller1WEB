@@ -1,5 +1,4 @@
 package com.example.wikigroup.wikigroup.controller;
-
 import com.example.wikigroup.wikigroup.model.Contact;
 import com.example.wikigroup.wikigroup.repository.ContactRepository;
 import jakarta.validation.Valid;
@@ -76,4 +75,5 @@ public class WikiController {
         model.addAttribute("contact", new Contact());
         return "contact";
     }
+
 }
