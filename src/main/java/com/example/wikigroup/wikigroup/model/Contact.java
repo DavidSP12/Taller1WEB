@@ -8,45 +8,40 @@ import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Contact {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private @ NotBlank @Min(1) @Max(1000000000) Long id;
 
     @NotBlank
     @Size(max = 100)
-    private String nombres;
+    private @Getter @NotBlank @Setter @Size(max = 100) String nombres;
 
     @NotBlank
     @Size(max = 100)
-    private String apellidos;
+    private @Getter @NotBlank @Setter @Size(max = 100) String apellidos;
 
     @NotBlank
     @Email
     @Size(max = 100)
-    private String correo;
+    private @Getter @NotBlank @Setter @Email @Size(max = 100) String correo;
 
     @Min(0)
     @Max(16)
-    private int semestre;
+    private @Getter @Min(0) @Max(16) @Setter int semestre;
 
     @NotBlank
-    private String descripcion;
+    private @Getter @NotBlank @Setter String descripcion;
 
-    // Getters and setters
-    public Long getId() { return id; }
-    public void setId(Long id) { this.id = id; }
-    public String getNombres() { return nombres; }
-    public void setNombres(String nombres) { this.nombres = nombres; }
-    public String getApellidos() { return apellidos; }
-    public void setApellidos(String apellidos) { this.apellidos = apellidos; }
-    public String getCorreo() { return correo; }
-    public void setCorreo(String correo) { this.correo = correo; }
-    public int getSemestre() { return semestre; }
-    public void setSemestre(int semestre) { this.semestre = semestre; }
-    public String getDescripcion() { return descripcion; }
-    public void setDescripcion(String descripcion) { this.descripcion = descripcion; }
-    
 }
