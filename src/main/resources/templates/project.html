@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WikiGroup - Nuestro Proyecto</title>
-    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
@@ -18,15 +18,15 @@
                 <i class="fas fa-bars"></i>
             </div>
             <ul class="nav-menu">
-                <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
-                <li><a href="team.html"><i class="fas fa-users"></i> Equipo</a></li>
-                <li><a href="project.html" class="active"><i class="fas fa-project-diagram"></i> Proyecto</a></li>
-                <li><a href="requirements.html"><i class="fas fa-clipboard-list"></i> Requerimientos</a></li>
-                <li><a href="architecture.html"><i class="fas fa-sitemap"></i> Arquitectura</a></li>
-                <li><a href="development.html"><i class="fas fa-code"></i> Desarrollo</a></li>
-                <li><a href="tests.html"><i class="fas fa-vial"></i> Pruebas</a></li>
-                <li><a href="deployment.html"><i class="fas fa-rocket"></i> Despliegue</a></li>
-                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contacto</a></li>
+                <li><a th:href="@{/}"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a th:href="@{/team}"><i class="fas fa-users"></i> Equipo</a></li>
+                <li><a th:href="@{/project}" class="active"><i class="fas fa-project-diagram"></i> Proyecto</a></li>
+                <li><a th:href="@{/requirements}"><i class="fas fa-clipboard-list"></i> Requerimientos</a></li>
+                <li><a th:href="@{/architecture}"><i class="fas fa-sitemap"></i> Arquitectura</a></li>
+                <li><a th:href="@{/development}"><i class="fas fa-code"></i> Desarrollo</a></li>
+                <li><a th:href="@{/tests}"><i class="fas fa-vial"></i> Pruebas</a></li>
+                <li><a th:href="@{/deployment}"><i class="fas fa-rocket"></i> Despliegue</a></li>
+                <li><a th:href="@{/contact}"><i class="fas fa-envelope"></i> Contacto</a></li>
             </ul>
         </nav>
     </header>

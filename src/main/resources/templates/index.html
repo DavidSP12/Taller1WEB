@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="WikiGroup - Documentación del proyecto de desarrollo web">
     <meta name="keywords" content="wiki, desarrollo web, documentación, proyecto">
     <meta name="author" content="WikiGroup Innovators">
-    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,15 +21,15 @@
                 <i class="fas fa-bars"></i>
             </div>
             <ul class="nav-menu">
-                <li><a href="index.html" class="active"><i class="fas fa-home"></i> Inicio</a></li>
-                <li><a href="team.html"><i class="fas fa-users"></i> Equipo</a></li>
-                <li><a href="project.html"><i class="fas fa-project-diagram"></i> Proyecto</a></li>
-                <li><a href="requirements.html"><i class="fas fa-list-check"></i> Requerimientos</a></li>
-                <li><a href="architecture.html"><i class="fas fa-sitemap"></i> Arquitectura</a></li>
-                <li><a href="development.html"><i class="fas fa-code"></i> Desarrollo</a></li>
-                <li><a href="tests.html"><i class="fas fa-vial"></i> Pruebas</a></li>
-                <li><a href="deployment.html"><i class="fas fa-rocket"></i> Despliegue</a></li>
-                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contacto</a></li>
+                <li><a th:href="@{/}" class="active"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a th:href="@{/team}"><i class="fas fa-users"></i> Equipo</a></li>
+                <li><a th:href="@{/project}"><i class="fas fa-project-diagram"></i> Proyecto</a></li>
+                <li><a th:href="@{/requirements}"><i class="fas fa-list-check"></i> Requerimientos</a></li>
+                <li><a th:href="@{/architecture}"><i class="fas fa-sitemap"></i> Arquitectura</a></li>
+                <li><a th:href="@{/development}"><i class="fas fa-code"></i> Desarrollo</a></li>
+                <li><a th:href="@{/tests}"><i class="fas fa-vial"></i> Pruebas</a></li>
+                <li><a th:href="@{/deployment}"><i class="fas fa-rocket"></i> Despliegue</a></li>
+                <li><a th:href="@{/contact}"><i class="fas fa-envelope"></i> Contacto</a></li>
             </ul>
         </nav>
     </header>
@@ -39,8 +39,8 @@
         <h1>Bienvenidos a WikiGroup</h1>
         <p class="lead">Documentación completa del proyecto de desarrollo web del equipo WikiGroup Innovators.</p>
         <div class="cta-buttons">
-            <a href="project.html" class="btn btn-primary"><i class="fas fa-project-diagram"></i> Ver Proyecto</a>
-            <a href="team.html" class="btn btn-secondary"><i class="fas fa-users"></i> Conocer al Equipo</a>
+            <a th:href="@{/project}" class="btn btn-primary"><i class="fas fa-project-diagram"></i> Ver Proyecto</a>
+            <a th:href="@{/team}" class="btn btn-secondary"><i class="fas fa-users"></i> Conocer al Equipo</a>
         </div>
     </section>
     
@@ -51,19 +51,19 @@
                 <div class="feature-icon"><i class="fas fa-sitemap"></i></div>
                 <h3>Arquitectura</h3>
                 <p>Explora la estructura y diseño técnico de nuestro proyecto.</p>
-                <a href="architecture.html" class="feature-link">Ver más <i class="fas fa-arrow-right"></i></a>
+                <a th:href="@{/architecture}" class="feature-link">Ver más <i class="fas fa-arrow-right"></i></a>
             </div>
             <div class="feature-card">
                 <div class="feature-icon"><i class="fas fa-code"></i></div>
                 <h3>Desarrollo</h3>
                 <p>Conoce las tecnologías y metodologías utilizadas en el desarrollo.</p>
-                <a href="development.html" class="feature-link">Ver más <i class="fas fa-arrow-right"></i></a>
+                <a th:href="@{/development}" class="feature-link">Ver más <i class="fas fa-arrow-right"></i></a>
             </div>
             <div class="feature-card">
                 <div class="feature-icon"><i class="fas fa-vial"></i></div>
                 <h3>Pruebas</h3>
                 <p>Revisa los casos de prueba y resultados de validación.</p>
-                <a href="tests.html" class="feature-link">Ver más <i class="fas fa-arrow-right"></i></a>
+                <a th:href="@{/tests}" class="feature-link">Ver más <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </section>
@@ -78,9 +78,9 @@
             <div class="footer-section">
                 <h4>Enlaces Rápidos</h4>
                 <ul class="footer-links">
-                    <li><a href="index.html"><i class="fas fa-home"></i> Inicio</a></li>
-                    <li><a href="team.html"><i class="fas fa-users"></i> Equipo</a></li>
-                    <li><a href="contact.html"><i class="fas fa-envelope"></i> Contacto</a></li>
+                    <li><a th:href="@{/}"><i class="fas fa-home"></i> Inicio</a></li>
+                    <li><a th:href="@{/team}"><i class="fas fa-users"></i> Equipo</a></li>
+                    <li><a th:href="@{/contact}"><i class="fas fa-envelope"></i> Contacto</a></li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -97,7 +97,7 @@
         </div>
     </footer>
 
-    <script src="../static/js/script.js"></script>
+    <script th:src="@{/js/script.js}"></script>
     <script>
         // Highlight current page in navigation
         document.addEventListener('DOMContentLoaded', function() {
