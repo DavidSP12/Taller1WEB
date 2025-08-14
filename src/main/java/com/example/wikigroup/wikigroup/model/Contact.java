@@ -22,26 +22,26 @@ import lombok.AllArgsConstructor;
 public class Contact {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private @ NotBlank @Min(1) @Max(1000000000) Long id;
+    private Long id;
 
-    @NotBlank
-    @Size(max = 100)
-    private @Getter @NotBlank @Setter @Size(max = 100) String nombres;
+    @NotBlank(message = "Los nombres son obligatorios")
+    @Size(max = 100, message = "Los nombres no pueden exceder 100 caracteres")
+    private String nombres;
 
-    @NotBlank
-    @Size(max = 100)
-    private @Getter @NotBlank @Setter @Size(max = 100) String apellidos;
+    @NotBlank(message = "Los apellidos son obligatorios")
+    @Size(max = 100, message = "Los apellidos no pueden exceder 100 caracteres")
+    private String apellidos;
 
-    @NotBlank
-    @Email
-    @Size(max = 100)
-    private @Getter @NotBlank @Setter @Email @Size(max = 100) String correo;
+    @NotBlank(message = "El correo es obligatorio")
+    @Email(message = "El correo debe tener un formato válido")
+    @Size(max = 100, message = "El correo no puede exceder 100 caracteres")
+    private String correo;
 
-    @Min(0)
-    @Max(16)
-    private @Getter @Min(0) @Max(16) @Setter int semestre;
+    @Min(value = 0, message = "El semestre debe ser mayor o igual a 0")
+    @Max(value = 16, message = "El semestre no puede ser mayor a 16")
+    private int semestre;
 
-    @NotBlank
-    private @Getter @NotBlank @Setter String descripcion;
-
+    @NotBlank(message = "La descripción es obligatoria")
+    @Size(max = 500, message = "La descripción no puede exceder 500 caracteres")
+    private String descripcion;
 }

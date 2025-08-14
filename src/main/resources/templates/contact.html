@@ -10,9 +10,7 @@
 </head>
 <body>
     <header>
-        <div class="logo">
-            <h1>WikiGroup</h1>
-        </div>
+        <div class="logo"><i class="fas fa-book-open"></i> WikiGroup</div>
         <nav>
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
@@ -67,33 +65,53 @@
                 </div>
             </div>
             
-            <form class="contact-form" method="post" action="#">
+            <form class="contact-form" th:action="@{/contact}" th:object="${contact}" method="post">
+                <div th:if="${error}" class="error-message">
+                    <p th:text="${error}"></p>
+                </div>
+                
+                <div th:if="${success}" class="success-message">
+                    <p th:text="${success}"></p>
+                </div>
+                
                 <div class="form-group">
                     <label for="nombres">Nombres:</label>
-                    <input type="text" id="nombres" name="nombres" maxlength="100" placeholder="Ingresa tus nombres" required>
-                    <span id="nombres-count" class="char-count">0/100</span>
+                    <input type="text" id="nombres" th:field="*{nombres}" maxlength="100" placeholder="Ingresa tus nombres" required>
+                    <div th:if="${#fields.hasErrors('nombres')}" class="error-message">
+                        <p th:errors="*{nombres}"></p>
+                    </div>
                 </div>
                 
                 <div class="form-group">
                     <label for="apellidos">Apellidos:</label>
-                    <input type="text" id="apellidos" name="apellidos" maxlength="100" placeholder="Ingresa tus apellidos" required>
-                    <span id="apellidos-count" class="char-count">0/100</span>
+                    <input type="text" id="apellidos" th:field="*{apellidos}" maxlength="100" placeholder="Ingresa tus apellidos" required>
+                    <div th:if="${#fields.hasErrors('apellidos')}" class="error-message">
+                        <p th:errors="*{apellidos}"></p>
+                    </div>
                 </div>
                 
                 <div class="form-group">
                     <label for="correo">Correo Electrónico:</label>
-                    <input type="email" id="correo" name="correo" maxlength="100" placeholder="ejemplo@dominio.com" required>
+                    <input type="email" id="correo" th:field="*{correo}" maxlength="100" placeholder="ejemplo@dominio.com" required>
+                    <div th:if="${#fields.hasErrors('correo')}" class="error-message">
+                        <p th:errors="*{correo}"></p>
+                    </div>
                 </div>
                 
                 <div class="form-group">
                     <label for="semestre">Semestre:</label>
-                    <input type="number" id="semestre" name="semestre" min="0" max="16" placeholder="Ej: 5" required>
+                    <input type="number" id="semestre" th:field="*{semestre}" min="0" max="16" placeholder="Ej: 5" required>
+                    <div th:if="${#fields.hasErrors('semestre')}" class="error-message">
+                        <p th:errors="*{semestre}"></p>
+                    </div>
                 </div>
                 
                 <div class="form-group">
                     <label for="descripcion">Descripción:</label>
-                    <textarea id="descripcion" name="descripcion" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
-                    <span id="descripcion-count" class="char-count">0/500</span>
+                    <textarea id="descripcion" th:field="*{descripcion}" rows="5" maxlength="500" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                    <div th:if="${#fields.hasErrors('descripcion')}" class="error-message">
+                        <p th:errors="*{descripcion}"></p>
+                    </div>
                 </div>
                 
                 <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Enviar Mensaje</button>
@@ -154,42 +172,70 @@
             });
 
             // Contador de caracteres para campos de texto
+            // AGREGAR ESTOS EVENT LISTENERS PARA CONTADORES DINÁMICOS
             const nombresInput = document.getElementById('nombres');
             const nombresCount = document.getElementById('nombres-count');
             const apellidosInput = document.getElementById('apellidos');
             const apellidosCount = document.getElementById('apellidos-count');
             const descripcionInput = document.getElementById('descripcion');
             const descripcionCount = document.getElementById('descripcion-count');
-
-            nombresInput.addEventListener('input', function() {
-                nombresCount.textContent = this.value.length + '/100';
-            });
-
-            apellidosInput.addEventListener('input', function() {
-                apellidosCount.textContent = this.value.length + '/100';
-            });
-
-            descripcionInput.addEventListener('input', function() {
-                descripcionCount.textContent = this.value.length + '/500';
-            });
-
+            
+            // Contador dinámico para nombres
+            if (nombresInput && nombresCount) {
+                nombresInput.addEventListener('input', function() {
+                    nombresCount.textContent = this.value.length + '/100';
+                });
+            }
+            
+            // Contador dinámico para apellidos
+            if (apellidosInput && apellidosCount) {
+                apellidosInput.addEventListener('input', function() {
+                    apellidosCount.textContent = this.value.length + '/100';
+                });
+            }
+            
+            // Contador dinámico para descripción
+            if (descripcionInput && descripcionCount) {
+                descripcionInput.addEventListener('input', function() {
+                    descripcionCount.textContent = this.value.length + '/500';
+                });
+            }
+            
             // Manejo del formulario
             const contactForm = document.querySelector('.contact-form');
             const errorMessage = document.getElementById('error');
             const successMessage = document.querySelector('.success-message');
 
+            <script>
             contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                // En un entorno real, aquí se enviarían los datos al servidor
-                // Como es una demo, mostramos un mensaje de éxito
-                errorMessage.style.display = 'none';
-                successMessage.textContent = '¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.';
-                successMessage.style.display = 'block';
-                contactForm.reset();
-                nombresCount.textContent = '0/100';
-                apellidosCount.textContent = '0/100';
-                descripcionCount.textContent = '0/500';
+                // Validaciones del lado cliente (opcional)
+                const nombres = document.getElementById('nombres').value.trim();
+                const apellidos = document.getElementById('apellidos').value.trim();
+                const correo = document.getElementById('correo').value.trim();
+                const semestre = document.getElementById('semestre').value;
+                const descripcion = document.getElementById('descripcion').value.trim();
+                
+                // Solo prevenir si hay errores de validación
+                if (!nombres || !apellidos || !correo || !semestre || !descripcion) {
+                    e.preventDefault();
+                    errorMessage.textContent = 'Todos los campos son obligatorios.';
+                    errorMessage.style.display = 'block';
+                    return;
+                }
+                
+                // Si todo está bien, permitir que el formulario se envíe al servidor
+                // NO usar e.preventDefault() aquí
+                console.log('Formulario válido, enviando al servidor...');
             });
+            </script>
+
+            errorMessage.style.display = 'none';
+            successMessage.textContent = '¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.';
+            successMessage.style.display = 'block';
+            contactForm.reset();
+            nombresCount.textContent = '0/100';
+            apellidosCount.textContent = '0/100';
+            descripcionCount.textContent = '0/500';
         });
     </script>
 </body>
