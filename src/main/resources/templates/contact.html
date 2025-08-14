@@ -77,6 +77,7 @@
                 <div class="form-group">
                     <label for="nombres">Nombres:</label>
                     <input type="text" id="nombres" th:field="*{nombres}" maxlength="100" placeholder="Ingresa tus nombres" required>
+                    <div class="char-count" id="nombres-count">0/100 caracteres</div>
                     <div th:if="${#fields.hasErrors('nombres')}" class="error-message">
                         <p th:errors="*{nombres}"></p>
                     </div>
@@ -85,6 +86,7 @@
                 <div class="form-group">
                     <label for="apellidos">Apellidos:</label>
                     <input type="text" id="apellidos" th:field="*{apellidos}" maxlength="100" placeholder="Ingresa tus apellidos" required>
+                    <div class="char-count" id="apellidos-count">0/100 caracteres</div>
                     <div th:if="${#fields.hasErrors('apellidos')}" class="error-message">
                         <p th:errors="*{apellidos}"></p>
                     </div>
@@ -109,6 +111,7 @@
                 <div class="form-group">
                     <label for="descripcion">Descripción:</label>
                     <textarea id="descripcion" th:field="*{descripcion}" rows="5" maxlength="500" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                    <div class="char-count" id="descripcion-count">0/500 caracteres</div>
                     <div th:if="${#fields.hasErrors('descripcion')}" class="error-message">
                         <p th:errors="*{descripcion}"></p>
                     </div>
@@ -152,7 +155,6 @@
     </footer>
 
     <script>
-        // Script para resaltar la página actual en el menú de navegación
         document.addEventListener('DOMContentLoaded', function() {
             const currentLocation = location.href;
             const menuItems = document.querySelectorAll('.nav-menu a');
@@ -171,8 +173,27 @@
                 navMenu.classList.toggle('active');
             });
 
-            // Contador de caracteres para campos de texto
-            // AGREGAR ESTOS EVENT LISTENERS PARA CONTADORES DINÁMICOS
+            // Función para actualizar contador de caracteres
+            function updateCharacterCounter(input, countElement, maxLength) {
+                const currentLength = input.value.length;
+                countElement.textContent = `${currentLength}/${maxLength} caracteres`;
+                
+                // Cambiar color según el porcentaje usado
+                const percentage = (currentLength / maxLength) * 100;
+                
+                if (percentage >= 90) {
+                    countElement.style.color = '#e74c3c'; // Rojo
+                    countElement.style.fontWeight = '600';
+                } else if (percentage >= 75) {
+                    countElement.style.color = '#f39c12'; // Naranja
+                    countElement.style.fontWeight = '500';
+                } else {
+                    countElement.style.color = '#7f8c8d'; // Gris
+                    countElement.style.fontWeight = '400';
+                }
+            }
+
+            // Configurar contadores para cada campo
             const nombresInput = document.getElementById('nombres');
             const nombresCount = document.getElementById('nombres-count');
             const apellidosInput = document.getElementById('apellidos');
@@ -180,62 +201,54 @@
             const descripcionInput = document.getElementById('descripcion');
             const descripcionCount = document.getElementById('descripcion-count');
             
-            // Contador dinámico para nombres
+            // Inicializar y configurar eventos para nombres
             if (nombresInput && nombresCount) {
+                updateCharacterCounter(nombresInput, nombresCount, 100);
                 nombresInput.addEventListener('input', function() {
-                    nombresCount.textContent = this.value.length + '/100';
+                    updateCharacterCounter(this, nombresCount, 100);
                 });
             }
             
-            // Contador dinámico para apellidos
+            // Inicializar y configurar eventos para apellidos
             if (apellidosInput && apellidosCount) {
+                updateCharacterCounter(apellidosInput, apellidosCount, 100);
                 apellidosInput.addEventListener('input', function() {
-                    apellidosCount.textContent = this.value.length + '/100';
+                    updateCharacterCounter(this, apellidosCount, 100);
                 });
             }
             
-            // Contador dinámico para descripción
+            // Inicializar y configurar eventos para descripción
             if (descripcionInput && descripcionCount) {
+                updateCharacterCounter(descripcionInput, descripcionCount, 500);
                 descripcionInput.addEventListener('input', function() {
-                    descripcionCount.textContent = this.value.length + '/500';
+                    updateCharacterCounter(this, descripcionCount, 500);
                 });
             }
             
             // Manejo del formulario
             const contactForm = document.querySelector('.contact-form');
             const errorMessage = document.getElementById('error');
-            const successMessage = document.querySelector('.success-message');
 
-            <script>
-            contactForm.addEventListener('submit', function(e) {
-                // Validaciones del lado cliente (opcional)
-                const nombres = document.getElementById('nombres').value.trim();
-                const apellidos = document.getElementById('apellidos').value.trim();
-                const correo = document.getElementById('correo').value.trim();
-                const semestre = document.getElementById('semestre').value;
-                const descripcion = document.getElementById('descripcion').value.trim();
-                
-                // Solo prevenir si hay errores de validación
-                if (!nombres || !apellidos || !correo || !semestre || !descripcion) {
-                    e.preventDefault();
-                    errorMessage.textContent = 'Todos los campos son obligatorios.';
-                    errorMessage.style.display = 'block';
-                    return;
-                }
-                
-                // Si todo está bien, permitir que el formulario se envíe al servidor
-                // NO usar e.preventDefault() aquí
-                console.log('Formulario válido, enviando al servidor...');
-            });
-            </script>
-
-            errorMessage.style.display = 'none';
-            successMessage.textContent = '¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.';
-            successMessage.style.display = 'block';
-            contactForm.reset();
-            nombresCount.textContent = '0/100';
-            apellidosCount.textContent = '0/100';
-            descripcionCount.textContent = '0/500';
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    const nombres = document.getElementById('nombres').value.trim();
+                    const apellidos = document.getElementById('apellidos').value.trim();
+                    const correo = document.getElementById('correo').value.trim();
+                    const semestre = document.getElementById('semestre').value;
+                    const descripcion = document.getElementById('descripcion').value.trim();
+                    
+                    if (!nombres || !apellidos || !correo || !semestre || !descripcion) {
+                        e.preventDefault();
+                        if (errorMessage) {
+                            errorMessage.textContent = 'Todos los campos son obligatorios.';
+                            errorMessage.style.display = 'block';
+                        }
+                        return;
+                    }
+                    
+                    console.log('Formulario válido, enviando al servidor...');
+                });
+            }
         });
     </script>
 </body>

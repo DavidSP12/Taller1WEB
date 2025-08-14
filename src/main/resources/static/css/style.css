@@ -392,11 +392,37 @@ footer {
   color: #aaa;
 }
 
-.contact-form .char-count {
-  font-size: 0.8rem;
-  color: #666;
-  text-align: right;
-  margin-top: 5px;
+/* Estilos para contador de caracteres */
+.char-count {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    text-align: right;
+    margin-top: 5px;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Estados del contador */
+.char-count.warning {
+    color: #f39c12;
+    font-weight: 500;
+}
+
+.char-count.danger {
+    color: #e74c3c;
+    font-weight: 600;
+}
+
+/* Mejorar espaciado */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Efecto al hacer focus */
+.contact-form input:focus + .char-count,
+.contact-form textarea:focus + .char-count {
+    transform: scale(1.05);
 }
 
 .contact-form .error-message {
