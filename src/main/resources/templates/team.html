@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WikiGroup - Nuestro Equipo</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>WikiGroup</h1>
+        </div>
+        <nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a th:href="@{/}"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a th:href="@{/team}" class="active"><i class="fas fa-users"></i> Equipo</a></li>
+                <li><a th:href="@{/project}"><i class="fas fa-project-diagram"></i> Proyecto</a></li>
+                <li><a th:href="@{/requirements}"><i class="fas fa-clipboard-list"></i> Requerimientos</a></li>
+                <li><a th:href="@{/architecture}"><i class="fas fa-sitemap"></i> Arquitectura</a></li>
+                <li><a th:href="@{/development}"><i class="fas fa-code"></i> Desarrollo</a></li>
+                <li><a th:href="@{/tests}"><i class="fas fa-vial"></i> Pruebas</a></li>
+                <li><a th:href="@{/deployment}"><i class="fas fa-rocket"></i> Despliegue</a></li>
+                <li><a th:href="@{/contact}"><i class="fas fa-envelope"></i> Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+    <section id="team">
+        <h1>Nuestro Equipo</h1>
+        <p class="lead">Somos WikiGroup Innovators, un equipo de desarrolladores apasionados por la tecnología y la innovación, comprometidos con crear soluciones de alta calidad.</p>
+        
+        <div class="team-container">
+            <div class="team-member">
+                <div class="member-image">
+                    <div class="avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+                <div class="member-info">
+                    <h2>David Santiago Piñeros Rodriguez</h2>
+                    <p class="member-title">Líder Técnico</p>
+                    <div class="member-contact">
+                        <p><i class="fab fa-github"></i> DavidSP12</p>
+                        <p><i class="fas fa-envelope"></i> pinerosrdavid@javeriana.edu.co</p>
+                    </div>
+                    <div class="member-skills">
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Spring Boot</span>
+                    </div>
+                    <div class="member-bio">
+                        <p>Ingeniero de software con amplia experiencia en arquitectura de sistemas y desarrollo full-stack. Especializado en la implementación de soluciones escalables y de alto rendimiento. Lidera el equipo técnico, define la arquitectura del proyecto y supervisa la calidad del código. Cuenta con experiencia en metodologías ágiles y gestión de equipos de desarrollo.</p>
+                    </div>
+                    <div class="member-social">
+                        <a href="https://github.com/DavidSP12" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:pinerosrdavid@javeriana.edu.co" class="social-icon"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <div class="member-image">
+                    <div class="avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+                <div class="member-info">
+                    <h2>Damian Rey Salcedo</h2>
+                    <p class="member-title">Líder de Planeación</p>
+                    <div class="member-contact">
+                        <p><i class="fab fa-github"></i> Viejodamis</p>
+                        <p><i class="fas fa-envelope"></i> Dreys@javeriana.edu.co</p>
+                    </div>
+                    <div class="member-skills">
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Scrum</span>
+                    </div>
+                    <div class="member-bio">
+                        <p>Especialista en gestión de proyectos y metodologías ágiles. Responsable de la planificación, seguimiento y control del proyecto. Coordina las actividades del equipo y asegura el cumplimiento de los plazos establecidos.</p>
+                    </div>
+                    <div class="member-social">
+                        <a href="https://github.com/Viejodamis" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:Dreys@javeriana.edu.co" class="social-icon"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <div class="member-image">
+                    <div class="avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+                <div class="member-info">
+                    <h2>Mateo Moreno Muñoz</h2>
+                    <p class="member-title">Desarrollador Frontend</p>
+                    <div class="member-contact">
+                        <p><i class="fab fa-github"></i> MateoMoreno2004</p>
+                        <p><i class="fas fa-envelope"></i> Mateo_morenom@javeriana.edu.co</p>
+                    </div>
+                    <div class="member-skills">
+                        <span class="skill-tag">HTML/CSS</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Angular</span>
+                    </div>
+                    <div class="member-bio">
+                        <p>Experto en desarrollo de interfaces de usuario y experiencia de usuario. Responsable de la implementación de componentes frontend y la integración con APIs. Especializado en frameworks modernos de JavaScript.</p>
+                    </div>
+                    <div class="member-social">
+                        <a href="https://github.com/MateoMoreno2004" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:Mateo_morenom@javeriana.edu.co" class="social-icon"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <div class="member-image">
+                    <div class="avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+                <div class="member-info">
+                    <h2>Wilson David Sanchez</h2>
+                    <p class="member-title">Desarrollador Backend</p>
+                    <div class="member-contact">
+                        <p><i class="fab fa-github"></i> WilsonSanchez13</p>
+                        <p><i class="fas fa-envelope"></i> Sanchez.wd@javeriana.edu.co</p>
+                    </div>
+                    <div class="member-skills">
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">Spring Boot</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">MongoDB</span>
+                    </div>
+                    <div class="member-bio">
+                        <p>Especializado en el desarrollo de APIs y servicios backend. Experto en bases de datos relacionales y NoSQL. Responsable de la implementación de la lógica de negocio y la integración con sistemas externos.</p>
+                    </div>
+                    <div class="member-social">
+                        <a href="https://github.com/WilsonSanchez13" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:Sanchez.wd@javeriana.edu.co" class="social-icon"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <div class="member-image">
+                    <div class="avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+                <div class="member-info">
+                    <h2>Sebastián Angulo Vergara</h2>
+                    <p class="member-title">Desarrollador Full Stack</p>
+                    <div class="member-contact">
+                        <p><i class="fab fa-github"></i> Sebastianav1011</p>
+                        <p><i class="fas fa-envelope"></i> Angulosebastian@javeriana.edu.co</p>
+                    </div>
+                    <div class="member-skills">
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Node.js</span>
+                    </div>
+                    <div class="member-bio">
+                        <p>Desarrollador versátil con experiencia tanto en frontend como en backend. Especializado en aplicaciones web modernas y arquitecturas basadas en microservicios. Contribuye en todas las capas del desarrollo.</p>
+                    </div>
+                    <div class="member-social">
+                        <a href="https://github.com/Sebastianav1011" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:Angulosebastian@javeriana.edu.co" class="social-icon"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-member">
+                <div class="member-image">
+                    <div class="avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+                <div class="member-info">
+                    <h2>Samuel Jesús Mejía Díaz</h2>
+                    <p class="member-title">Líder de Pruebas</p>
+                    <div class="member-contact">
+                        <p><i class="fab fa-github"></i> Samuj221</p>
+                        <p><i class="fas fa-envelope"></i> samejia@javeriana.edu.co</p>
+                    </div>
+                    <div class="member-skills">
+                        <span class="skill-tag">Java</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Selenium</span>
+                        <span class="skill-tag">JUnit</span>
+                        <span class="skill-tag">Cypress</span>
+                    </div>
+                    <div class="member-bio">
+                        <p>Especialista en aseguramiento de calidad y pruebas de software. Responsable de diseñar y ejecutar planes de prueba, automatizar pruebas y garantizar la calidad del producto. Experto en metodologías de pruebas y herramientas de automatización.</p>
+                    </div>
+                    <div class="member-social">
+                        <a href="https://github.com/Samuj221" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:samejia@javeriana.edu.co" class="social-icon"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </main>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>WikiGroup</h3>
+                <p>Plataforma innovadora para la gestión de conocimiento y colaboración en equipos de desarrollo.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="team.html">Equipo</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Redes Sociales</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 WikiGroup. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Script para resaltar la página actual en el menú de navegación
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentLocation = location.href;
+            const menuItems = document.querySelectorAll('.nav-menu a');
+            const menuLength = menuItems.length;
+            for (let i = 0; i < menuLength; i++) {
+                if (menuItems[i].href === currentLocation) {
+                    menuItems[i].className = 'active';
+                }
+            }
+
+            // Toggle para menú móvil
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            menuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WikiGroup - Contacto</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>WikiGroup</h1>
+        </div>
+        <nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a th:href="@{/}"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a th:href="@{/team}"><i class="fas fa-users"></i> Equipo</a></li>
+                <li><a th:href="@{/project}"><i class="fas fa-project-diagram"></i> Proyecto</a></li>
+                <li><a th:href="@{/requirements}"><i class="fas fa-clipboard-list"></i> Requerimientos</a></li>
+                <li><a th:href="@{/architecture}"><i class="fas fa-sitemap"></i> Arquitectura</a></li>
+                <li><a th:href="@{/development}"><i class="fas fa-code"></i> Desarrollo</a></li>
+                <li><a th:href="@{/tests}"><i class="fas fa-vial"></i> Pruebas</a></li>
+                <li><a th:href="@{/deployment}"><i class="fas fa-rocket"></i> Despliegue</a></li>
+                <li><a th:href="@{/contact}" class="active"><i class="fas fa-envelope"></i> Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+    <section id="contact">
+        <h1>Contáctenos</h1>
+        <p class="lead">¿Tienes alguna pregunta o comentario sobre nuestro proyecto? Completa el formulario a continuación y nos pondremos en contacto contigo lo antes posible.</p>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Ubicación</h4>
+                        <p>Pontificia Universidad Javeriana, Bogotá</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <p>wikigroup@example.com</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h4>Teléfono</h4>
+                        <p>+57 123 456 7890</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h4>Horario</h4>
+                        <p>Lunes - Viernes: 9:00 AM - 5:00 PM</p>
+                    </div>
+                </div>
+            </div>
+            
+            <form class="contact-form" method="post" action="#">
+                <div class="form-group">
+                    <label for="nombres">Nombres:</label>
+                    <input type="text" id="nombres" name="nombres" maxlength="100" placeholder="Ingresa tus nombres" required>
+                    <span id="nombres-count" class="char-count">0/100</span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="apellidos">Apellidos:</label>
+                    <input type="text" id="apellidos" name="apellidos" maxlength="100" placeholder="Ingresa tus apellidos" required>
+                    <span id="apellidos-count" class="char-count">0/100</span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="correo">Correo Electrónico:</label>
+                    <input type="email" id="correo" name="correo" maxlength="100" placeholder="ejemplo@dominio.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="semestre">Semestre:</label>
+                    <input type="number" id="semestre" name="semestre" min="0" max="16" placeholder="Ej: 5" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="descripcion">Descripción:</label>
+                    <textarea id="descripcion" name="descripcion" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                    <span id="descripcion-count" class="char-count">0/500</span>
+                </div>
+                
+                <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Enviar Mensaje</button>
+            </form>
+        </div>
+        
+        <div id="error" class="error-message" style="display: none;"></div>
+        <div class="success-message" style="display: none;"></div>
+    </section>
+    </main>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>WikiGroup</h3>
+                <p>Plataforma innovadora para la gestión de conocimiento y colaboración en equipos de desarrollo.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="team.html">Equipo</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Redes Sociales</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 WikiGroup. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Script para resaltar la página actual en el menú de navegación
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentLocation = location.href;
+            const menuItems = document.querySelectorAll('.nav-menu a');
+            const menuLength = menuItems.length;
+            for (let i = 0; i < menuLength; i++) {
+                if (menuItems[i].href === currentLocation) {
+                    menuItems[i].className = 'active';
+                }
+            }
+
+            // Toggle para menú móvil
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            menuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+
+            // Contador de caracteres para campos de texto
+            const nombresInput = document.getElementById('nombres');
+            const nombresCount = document.getElementById('nombres-count');
+            const apellidosInput = document.getElementById('apellidos');
+            const apellidosCount = document.getElementById('apellidos-count');
+            const descripcionInput = document.getElementById('descripcion');
+            const descripcionCount = document.getElementById('descripcion-count');
+
+            nombresInput.addEventListener('input', function() {
+                nombresCount.textContent = this.value.length + '/100';
+            });
+
+            apellidosInput.addEventListener('input', function() {
+                apellidosCount.textContent = this.value.length + '/100';
+            });
+
+            descripcionInput.addEventListener('input', function() {
+                descripcionCount.textContent = this.value.length + '/500';
+            });
+
+            // Manejo del formulario
+            const contactForm = document.querySelector('.contact-form');
+            const errorMessage = document.getElementById('error');
+            const successMessage = document.querySelector('.success-message');
+
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                // En un entorno real, aquí se enviarían los datos al servidor
+                // Como es una demo, mostramos un mensaje de éxito
+                errorMessage.style.display = 'none';
+                successMessage.textContent = '¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.';
+                successMessage.style.display = 'block';
+                contactForm.reset();
+                nombresCount.textContent = '0/100';
+                apellidosCount.textContent = '0/100';
+                descripcionCount.textContent = '0/500';
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WikiGroup - Arquitectura</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>WikiGroup</h1>
+        </div>
+        <nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a th:href="@{/}"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a th:href="@{/team}"><i class="fas fa-users"></i> Equipo</a></li>
+                <li><a th:href="@{/project}"><i class="fas fa-project-diagram"></i> Proyecto</a></li>
+                <li><a th:href="@{/requirements}"><i class="fas fa-clipboard-list"></i> Requerimientos</a></li>
+                <li><a th:href="@{/architecture}" class="active"><i class="fas fa-sitemap"></i> Arquitectura</a></li>
+                <li><a th:href="@{/development}"><i class="fas fa-code"></i> Desarrollo</a></li>
+                <li><a th:href="@{/tests}"><i class="fas fa-vial"></i> Pruebas</a></li>
+                <li><a th:href="@{/deployment}"><i class="fas fa-rocket"></i> Despliegue</a></li>
+                <li><a th:href="@{/contact}"><i class="fas fa-envelope"></i> Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+    <section id="architecture">
+        <h1>Arquitectura del Proyecto</h1>
+        <p class="lead">Documentación detallada de la arquitectura del sistema, incluyendo diagramas C4, modelos de datos y patrones de diseño implementados.</p>
+        
+        <div class="project-container">
+            <!-- Diagrama de Contexto -->
+            <div class="project-section">
+                <div class="section-icon">
+                    <i class="fas fa-project-diagram"></i>
+                </div>
+                <div class="section-content">
+                    <h2>Diagrama de Contexto</h2>
+                    <p>El diagrama de contexto muestra cómo nuestro sistema interactúa con usuarios y sistemas externos. Proporciona una visión de alto nivel de las interacciones del sistema con su entorno.</p>
+                    <div class="tech-stack">
+                        <div class="tech-item">
+                            <i class="fas fa-users"></i>
+                            <span>Usuarios</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-database"></i>
+                            <span>Base de Datos</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-server"></i>
+                            <span>API Externa</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-cloud"></i>
+                            <span>Servicios Cloud</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Diagrama de Contenedor -->
+            <div class="project-section">
+                <div class="section-icon">
+                    <i class="fas fa-cubes"></i>
+                </div>
+                <div class="section-content">
+                    <h2>Diagrama de Contenedor</h2>
+                    <p>El diagrama de contenedor muestra los componentes de alto nivel que conforman el sistema y cómo se comunican entre sí. Detalla la arquitectura técnica y las decisiones de tecnología.</p>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <h3><i class="fas fa-laptop-code"></i> Frontend</h3>
+                            <p>Aplicación web desarrollada con Thymeleaf y Bootstrap que proporciona la interfaz de usuario.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3><i class="fas fa-cogs"></i> Backend</h3>
+                            <p>API RESTful desarrollada con Spring Boot que implementa la lógica de negocio.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3><i class="fas fa-database"></i> Base de Datos</h3>
+                            <p>Sistema de almacenamiento persistente que utiliza MySQL para guardar los datos del sistema.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Diagrama de Componentes -->
+            <div class="project-section">
+                <div class="section-icon">
+                    <i class="fas fa-puzzle-piece"></i>
+                </div>
+                <div class="section-content">
+                    <h2>Diagrama de Componentes</h2>
+                    <p>El diagrama de componentes desglosa cada contenedor en componentes más pequeños, mostrando cómo se implementa la funcionalidad dentro de cada contenedor.</p>
+                    <ul class="objectives-list">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Controladores: Gestionan las solicitudes HTTP y devuelven respuestas apropiadas.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Servicios: Implementan la lógica de negocio y coordinan las operaciones.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Repositorios: Proporcionan acceso a los datos almacenados en la base de datos.</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span>Modelos: Representan las entidades de datos y las relaciones entre ellas.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Modelo Entidad/Relación -->
+            <div class="project-section">
+                <div class="section-icon">
+                    <i class="fas fa-sitemap"></i>
+                </div>
+                <div class="section-content">
+                    <h2>Modelo Entidad/Relación</h2>
+                    <p>El modelo entidad/relación define la estructura de datos del sistema, mostrando las entidades principales, sus atributos y las relaciones entre ellas.</p>
+                    <div class="tech-stack">
+                        <div class="tech-item">
+                            <i class="fas fa-user"></i>
+                            <span>Usuario</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-tasks"></i>
+                            <span>Proyecto</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-clipboard-list"></i>
+                            <span>Tarea</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-comments"></i>
+                            <span>Comentario</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Diagrama de Despliegue -->
+            <div class="project-section">
+                <div class="section-icon">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+                <div class="section-content">
+                    <h2>Diagrama de Despliegue</h2>
+                    <p>El diagrama de despliegue muestra cómo se distribuyen los componentes del sistema en la infraestructura física o virtual, incluyendo servidores, contenedores y servicios cloud.</p>
+                    <div class="progress-container">
+                        <div class="progress-item">
+                            <div class="progress-label">Desarrollo</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%;"></div>
+                            </div>
+                            <div class="progress-percentage">100%</div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-label">Pruebas</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%;"></div>
+                            </div>
+                            <div class="progress-percentage">85%</div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-label">Producción</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 70%;"></div>
+                            </div>
+                            <div class="progress-percentage">70%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Enlaces Rápidos</h3>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="team.html">Equipo</a></li>
+                <li><a href="project.html">Proyecto</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Documentación</h3>
+            <ul>
+                <li><a href="requirements.html">Requerimientos</a></li>
+                <li><a href="architecture.html">Arquitectura</a></li>
+                <li><a href="development.html">Desarrollo</a></li>
+                <li><a href="tests.html">Pruebas</a></li>
+                <li><a href="deployment.html">Despliegue</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Síguenos</h3>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2023 WikiGroup. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<script>
+    // Highlight active navigation item
+    document.addEventListener('DOMContentLoaded', function() {
+        const currentLocation = location.href;
+        const menuItems = document.querySelectorAll('.nav-menu a');
+        menuItems.forEach(link => {
+            if(link.href === currentLocation) {
+                link.classList.add('active');
+            }
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        menuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+    });
+</script>
+ </body>
+ </html>

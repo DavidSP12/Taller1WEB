@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WikiGroup - Nuestro Proyecto</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>WikiGroup</h1>
+        </div>
+        <nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a th:href="@{/}"><i class="fas fa-home"></i> Inicio</a></li>
+                <li><a th:href="@{/team}"><i class="fas fa-users"></i> Equipo</a></li>
+                <li><a th:href="@{/project}" class="active"><i class="fas fa-project-diagram"></i> Proyecto</a></li>
+                <li><a th:href="@{/requirements}"><i class="fas fa-clipboard-list"></i> Requerimientos</a></li>
+                <li><a th:href="@{/architecture}"><i class="fas fa-sitemap"></i> Arquitectura</a></li>
+                <li><a th:href="@{/development}"><i class="fas fa-code"></i> Desarrollo</a></li>
+                <li><a th:href="@{/tests}"><i class="fas fa-vial"></i> Pruebas</a></li>
+                <li><a th:href="@{/deployment}"><i class="fas fa-rocket"></i> Despliegue</a></li>
+                <li><a th:href="@{/contact}"><i class="fas fa-envelope"></i> Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+    <section id="project">
+        <h1>Nuestro Proyecto</h1>
+        <p class="lead">WikiGroup es una plataforma innovadora diseñada para facilitar la colaboración y gestión de conocimiento en equipos de desarrollo.</p>
+        
+        <div class="project-container">
+            <div class="project-section">
+                <div class="section-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <div class="section-content">
+                    <h2>Visión General</h2>
+                    <p>WikiGroup es una plataforma web que combina las funcionalidades de una wiki colaborativa con herramientas de gestión de proyectos, permitiendo a los equipos documentar, compartir y mantener su conocimiento de manera eficiente mientras gestionan sus tareas diarias.</p>
+                </div>
+            </div>
+            
+            <div class="project-section">
+                <div class="section-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <div class="section-content">
+                    <h2>Objetivos</h2>
+                    <ul class="objectives-list">
+                        <li><i class="fas fa-check-circle"></i> Facilitar la documentación colaborativa en equipos de desarrollo</li>
+                        <li><i class="fas fa-check-circle"></i> Integrar gestión de conocimiento con seguimiento de proyectos</li>
+                        <li><i class="fas fa-check-circle"></i> Proporcionar una interfaz intuitiva y accesible para todos los miembros del equipo</li>
+                        <li><i class="fas fa-check-circle"></i> Mejorar la eficiencia en la transferencia de conocimiento entre miembros del equipo</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="project-section">
+                <div class="section-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <div class="section-content">
+                    <h2>Tecnologías Utilizadas</h2>
+                    <div class="tech-stack">
+                        <div class="tech-item">
+                            <i class="fab fa-java"></i>
+                            <span>Java</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-leaf"></i>
+                            <span>Spring Boot</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML5</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-css3-alt"></i>
+                            <span>CSS3</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-js"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fas fa-database"></i>
+                            <span>MySQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-section">
+                <div class="section-icon">
+                    <i class="fas fa-tasks"></i>
+                </div>
+                <div class="section-content">
+                    <h2>Características Principales</h2>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <h3><i class="fas fa-edit"></i> Edición Colaborativa</h3>
+                            <p>Permite a múltiples usuarios editar documentos simultáneamente con control de versiones.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3><i class="fas fa-project-diagram"></i> Gestión de Proyectos</h3>
+                            <p>Integración con herramientas de seguimiento de tareas y proyectos.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3><i class="fas fa-search"></i> Búsqueda Avanzada</h3>
+                            <p>Sistema de búsqueda potente para encontrar rápidamente la información necesaria.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3><i class="fas fa-user-shield"></i> Control de Acceso</h3>
+                            <p>Gestión granular de permisos para diferentes roles de usuario.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-section">
+                <div class="section-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="section-content">
+                    <h2>Estado Actual</h2>
+                    <div class="progress-container">
+                        <div class="progress-item">
+                            <div class="progress-label">Diseño</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%;"></div>
+                            </div>
+                            <div class="progress-percentage">100%</div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-label">Desarrollo Frontend</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 80%;"></div>
+                            </div>
+                            <div class="progress-percentage">80%</div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-label">Desarrollo Backend</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%;"></div>
+                            </div>
+                            <div class="progress-percentage">75%</div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-label">Pruebas</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 60%;"></div>
+                            </div>
+                            <div class="progress-percentage">60%</div>
+                        </div>
+                        <div class="progress-item">
+                            <div class="progress-label">Documentación</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 90%;"></div>
+                            </div>
+                            <div class="progress-percentage">90%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Enlaces Rápidos</h3>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="team.html">Equipo</a></li>
+                <li><a href="project.html">Proyecto</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Documentación</h3>
+            <ul>
+                <li><a href="requirements.html">Requerimientos</a></li>
+                <li><a href="architecture.html">Arquitectura</a></li>
+                <li><a href="development.html">Desarrollo</a></li>
+                <li><a href="tests.html">Pruebas</a></li>
+                <li><a href="deployment.html">Despliegue</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3>Síguenos</h3>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2023 WikiGroup. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<script>
+    // Highlight active navigation item
+    document.addEventListener('DOMContentLoaded', function() {
+        const currentLocation = location.href;
+        const menuItems = document.querySelectorAll('.nav-menu a');
+        menuItems.forEach(link => {
+            if(link.href === currentLocation) {
+                link.classList.add('active');
+            }
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        menuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+    });
+</script>
+ </body>
+ </html>
